@@ -1,0 +1,8 @@
+[user]
+	name = Lyall Hamilton
+	email = lyall.hamilton@gmail.com
+[core]
+	excludesfile = ~/dotfiles/.gitignore_global
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
