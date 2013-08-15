@@ -1,7 +1,7 @@
-" set window size of gvim
-set lines=50 columns=80
+" set window size
+set columns=100
 
-" set background=dark
+set background=dark
 set nocompatible " Use Vim settings, rather than Vi settings. Must be first
 " set autoindent " Use the indent from the previous line
 set smartindent
