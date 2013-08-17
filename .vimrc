@@ -6,10 +6,9 @@ set nocompatible " Use Vim settings, rather than Vi settings. Must be first
 " set autoindent " Use the indent from the previous line
 set smartindent
 
-" 4 space indentation, google style for java and python. C++ set below
-set tabstop=4
-set softtabstop=4 " backspacing on a spaced tab will delete the 4 spaces not just one
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2 " backspacing on a spaced tab will delete the 4 spaces not just one
+set shiftwidth=2
 set expandtab " insert spaces instead of tab character
 set showmatch
 set ruler " show the cursor position all the time
