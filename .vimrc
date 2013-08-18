@@ -1,5 +1,7 @@
-" set window size
-set columns=100
+" set window size of gvim
+if has('gui_running')
+  set columns=100
+endif
 
 set background=dark
 set nocompatible " Use Vim settings, rather than Vi settings. Must be first
