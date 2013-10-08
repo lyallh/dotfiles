@@ -3,7 +3,10 @@ if has('gui_running')
   set columns=100
 endif
 
+" colour adjustments for dark background terminal
 set background=dark
+hi TabLineFill cterm=bold ctermbg=0
+
 set nocompatible " Use Vim settings, rather than Vi settings. Must be first
 " set autoindent " Use the indent from the previous line
 set smartindent
@@ -40,3 +43,4 @@ map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 
 map <F2> :NERDTreeToggle<CR>
+set pastetoggle=<F3>
