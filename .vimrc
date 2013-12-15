@@ -44,3 +44,8 @@ map <C-L> <C-W>l<C-W>_
 
 map <F2> :NERDTreeToggle<CR>
 set pastetoggle=<F3>
+
+" Set the switch buffer command :sb to switch to tab containing that buffer
+" instead of default behaviour of splitting current window
+" Can then switch tab using :sb {search string}
+set switchbuf=usetab
