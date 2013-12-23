@@ -42,7 +42,8 @@ map <C-K> <C-W>k<C-W>_
 map <C-H> <C-W>h<C-W>_
 map <C-L> <C-W>l<C-W>_
 
-map <F2> :NERDTreeToggle<CR>
+" map <F2> :NERDTreeToggle<CR>
+map <F2> :ls<CR>:b<Space>
 set pastetoggle=<F3>
 
 " Set the switch buffer command :sb to switch to tab containing that buffer
