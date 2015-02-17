@@ -50,3 +50,7 @@ set pastetoggle=<F3>
 " instead of default behaviour of splitting current window
 " Can then switch tab using :sb {search string}
 set switchbuf=usetab
+
+" Allow use of . command in visual mode to repeat last command on selection
+" (https://danielmiessler.com/study/vim/)
+vnoremap . :norm.<CR>
