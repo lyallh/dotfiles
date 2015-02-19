@@ -54,3 +54,16 @@ set switchbuf=usetab
 " Allow use of . command in visual mode to repeat last command on selection
 " (https://danielmiessler.com/study/vim/)
 vnoremap . :norm.<CR>
+
+" Pathogen
+execute pathogen#infect()
+" Enable loading of plugin and indent files for specific file types
+filetype plugin indent on
+" Activate solarized colorscheme
+syntax enable
+  " Use the degraded 256 color mode until solarized is set up in terminal too
+  "set t_Co=256
+  "let g:solarized_termcolors=256
+set t_Co=16
+set number
+colorscheme solarized
