@@ -161,3 +161,4 @@ client.focused           #4c7899   #073642     #ffffff
 # Layout saving
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/lyall/.i3/threecol.json'"
 exec chromium-browser
+exec xrandr --output DVI-I-1 --off --output DP-0 --auto
