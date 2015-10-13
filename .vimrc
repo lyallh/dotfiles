@@ -18,8 +18,12 @@ set expandtab " insert spaces instead of tab character
 set showmatch
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
+
+" Search preferences
 set incsearch " make search act like search in modern browsers
 set nohls
+set ignorecase
+set smartcase " If pattern contains an uppercase letter, make search case sensitive
 
 
 " smartindent mode for python files
