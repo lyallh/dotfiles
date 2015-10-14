@@ -156,7 +156,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Color customization    border    background  text
-client.focused           #4c7899   #073642     #ffffff
+#client.focused           #4c7899   #073642     #ffffff
+client.focused           #4c7899   #000000     #ffffff
 
 # Layout saving
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/lyall/.i3/threecol.json'"
