@@ -55,14 +55,14 @@
             "percent": 1,
             "swallows": [
                {
-                  "class": "^Chromium\\-browser$"
+                  "class": "^chromium\\-browser$"
                // "instance": "^Chromium\\-browser$",
                // "title": "^i3\\:\\ Layout\\ saving\\ in\\ i3\\ \\-\\ Chromium$",
                // "transient_for": "^$",
                // "window_role": "^browser$"
                },
                {
-                  "class": "^Google\\-chrome$"
+                  "class": "^google\\-chrome$"
                }
             ],
             "type": "con"
@@ -88,15 +88,11 @@
                "x": 1,
                "y": 1
             },
-            "name": "Tabs Outliner",
+            "name": "Terminal",
             "percent": 1,
             "swallows": [
                {
-                  "class": "^Chromium\\-browser$"
-               // "instance": "^crx_eggkanocgddhmamlbiijnphhppkpkmkl$",
-               // "title": "^Tabs\\ Outliner$"
-               // "transient_for": "^$",
-               // "window_role": "^pop\\-up$"
+                  "class": "^Gnome\\-terminal$"
                }
             ],
             "type": "con"
