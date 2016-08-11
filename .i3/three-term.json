@@ -4,7 +4,7 @@
     "border": "normal",
     "floating": "auto_off",
     "layout": "splitv",
-    "percent": 0.3125,
+    "percent": 0.4,
     "type": "con",
     "nodes": [
         {
@@ -17,31 +17,15 @@
                "x": 0,
                "y": 0
             },
-            //"name": "lyall@lyall-linux:/home/lyall",
-            "name": "Terminal",
-            "percent": 0.85,
+            "name": "lyall@lyall-linux:/home/lyall",
+            "percent": null,
             "swallows": [
                {
                   "class": "^Gnome\\-terminal$"
-               }
-            ],
-            "type": "con"
-        },
-        {
-            "border": "normal",
-            "current_border_width": 2,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 2158,
-               "width": 400,
-               "x": 1,
-               "y": 1
-            },
-            "name": "Terminal",
-            "percent": 0.15,
-            "swallows": [
-               {
-                  "class": "^Gnome\\-terminal$"
+               // "instance": "^gnome\\-terminal$",
+               // "title": "^lyall\\@lyall\\-linux\\:\\/home\\/lyall$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-5377\\-\\-1479917188\\-1444147402$"
                }
             ],
             "type": "con"
@@ -54,7 +38,7 @@
     "border": "normal",
     "floating": "auto_off",
     "layout": "stacked",
-    "percent": 0.375,
+    "percent": 0.3,
     "type": "con",
     "nodes": [
         {
@@ -62,19 +46,20 @@
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
-               "height": 2121,
-               "width": 1000,
-               "x": 406,
-               "y": 1
+               "height": 434,
+               "width": 722,
+               "x": 0,
+               "y": 0
             },
-            "name": "Chrome",
-            "percent": 1,
+            "name": "lyall@lyall-linux:/home/lyall",
+            "percent": null,
             "swallows": [
                {
-                  "class": "^chromium\\-browser$"
-               },
-               {
-                  "class": "^[Gg]oogle\\-chrome"
+                  "class": "^Gnome\\-terminal$"
+               // "instance": "^gnome\\-terminal$",
+               // "title": "^lyall\\@lyall\\-linux\\:\\/home\\/lyall$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-5377\\-\\-1800223631\\-1444147403$"
                }
             ],
             "type": "con"
@@ -87,7 +72,7 @@
     "border": "normal",
     "floating": "auto_off",
     "layout": "splitv",
-    "percent": 0.3125,
+    "percent": 0.3,
     "type": "con",
     "nodes": [
         {
@@ -95,24 +80,24 @@
             "current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
-               "height": 2158,
-               "width": 400,
-               "x": 1,
-               "y": 1
+               "height": 434,
+               "width": 722,
+               "x": 0,
+               "y": 0
             },
-            "name": "Editor",
-            "percent": 1,
+            "name": "lyall@lyall-linux:/home/lyall",
+            "percent": null,
             "swallows": [
                {
-                  //"class": "^Gnome\\-terminal$"
-                  "class": "^Atom$",
-                  "transient_for": "^$",
-                  "window_role": "^browser\\-window$"
+                  "class": "^Gnome\\-terminal$"
+               // "instance": "^gnome\\-terminal$",
+               // "title": "^lyall\\@lyall\\-linux\\:\\/home\\/lyall$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-5377\\-851723377\\-1444147404$"
                }
             ],
             "type": "con"
         }
-        
     ]
 }
 

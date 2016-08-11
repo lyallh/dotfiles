@@ -148,25 +148,3 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-
-# Color customization    border    background  text
-#client.focused           #4c7899   #073642     #ffffff
-client.focused           #4c7899   #000000     #ffffff
-
-
-### LWH ###
-
-# Monitor setup
-exec xrandr --output DVI-I-1 --off --output HDMI-0 --off --output DP-0 --auto
-
-# Layout saving
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/lyall/.i3/threecol.json'"
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/lyall/.i3/apps.json'"
-exec google-chrome --profile-directory="Profile 1"
-exec google-chrome --app=http://music.google.com --profile-directory="Profile 2"
