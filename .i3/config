@@ -155,18 +155,93 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# Color customization    border    background  text
-#client.focused           #4c7899   #073642     #ffffff
-client.focused           #4c7899   #000000     #ffffff
+# Color customization    border     backgr.    text       indicator   child_border
+# solarized bg: client.focused           #4c7899    #073642    #ffffff
+# black when focused: client.focused           #000000    #000000    #ffffff
+#client.focused           #4c7899    #5f676a    #ffffff 
+#client.focused           #4c7899    #5f676a    #ffffff    #2e9ef4    #000000 
+client.focused           #222222    #222222    #ffffff    #2e9ef4    #000000 
+client.focused_inactive  #000000    #000000    #ffffff    #484e50     
+client.unfocused         #000000    #000000    #888888    #292d2e     
+#
+# DEFAULTS from userguide
+#client.focused           #4c7899    #285577    #ffffff    #2e9ef4     #285577
+#client.focused_inactive  #333333    #5f676a    #ffffff    #484e50     #5f676a
+#client.unfocused         #333333    #222222    #888888    #292d2e     #222222
+#client.urgent            #2f343a    #900000    #ffffff    #900000     #900000
+#client.placeholder       #000000    #0c0c0c    #ffffff    #000000     #0c0c0c
 
+client.background       #ffffff
 
 ### LWH ###
+
+# Multimedia Keys
+# volume control (https://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/)
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+# brightness control
+bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 10
 
 # Monitor setup
 exec xrandr --output DVI-I-1 --off --output HDMI-0 --off --output DP-0 --auto
 
+# Launch gnome-settings-daemon to support loading of
+# themes specified in ~/.gtkrc-2.0 and ~/.config/gtk-3.0/settings.ini
+exec --no-startup-id gnome-settings-daemon
+
+# border size on windows. 
+# Difference between using "pixel" and "normal" ?
+#   Seems that pixel = no title bar
+new_window normal 2
+
+# no title bar on some apps
+#  No titlbar for local terminal but want it for ssh sessions. Check this occurs
+#for_window [title="lyall@lyall-linux:"] border pixel 2
+for_window [title="WeeChat"] border pixel 2
+for_window [class="Pavu"] border pixel 2
+for_window [instance="messenger.com"] border pixel 2
+for_window [instance="music.google.com"] border pixel 2
+for_window [instance="evernote.com"] border pixel 2
+
 # Layout saving
 exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/lyall/.i3/threecol.json'"
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/lyall/.i3/apps.json'"
-exec google-chrome --profile-directory="Profile 1"
-exec google-chrome --app=http://music.google.com --profile-directory="Profile 2"
+#exec google-chrome --profile-directory="Profile 1"
+#exec google-chrome --app=http://music.google.com --profile-directory="Profile 2"
+
+# Launcher mode as demonstrated in userguide
+set $mode_launcher LAUNCHER: Chrome - [l]yall, [d]ev, google [m]usic, [f]acebook messenger
+mode "$mode_launcher" {
+        bindsym m exec google-chrome --app=http://music.google.com --profile-directory="Profile 2"
+        bindsym f exec google-chrome --app=http://messenger.com --profile-directory="Profile 2"
+        bindsym e exec google-chrome --app=http://evernote.com --profile-directory="Profile 2"
+        bindsym d exec google-chrome-beta --profile-directory="Default"
+        bindsym l exec google-chrome-beta --profile-directory="Profile 2"
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+o mode "$mode_launcher"
+
+# Shutdown mode
+mode  "SHUTDOWN: (s)leep (h)ybernate (p)owersave (r)estart shut(d)own" {
+
+        bindsym s exec sudo pm-suspend; mode "default"
+#        bindsym h exec sudo pm-hibernate; mode "default"
+        bindsym p exec sudo pm-powersave; mode "default"
+        bindsym d exec sudo 'shutdown -h now'; mode "default"
+        bindsym r exec sudo 'shutdown -r now'; mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+n mode "SHUTDOWN: (s)leep (h)ybernate (p)owersave (r)estart shut(d)own"
+
+# Set a fullscreen video to floating 1080p size container
+# can also add ; sticky enable
+bindsym $mod+y fullscreen disable; floating enable; resize set 1924 1100 
+
+# launch i3-input prompt. Use to set/goto marks
+bindsym $mod+Shift+i exec i3-input

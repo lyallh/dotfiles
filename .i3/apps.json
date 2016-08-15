@@ -1,29 +1,4 @@
 // vim:ts=4:sw=4:et
-{
-    "border": "normal",
-    "current_border_width": 2,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 434,
-       "width": 722,
-       "x": 0,
-       "y": 0
-    },
-    "name": "lyall@lyall-linux:/home/lyall",
-    "percent": 0.5,
-    "swallows": [
-       {
-       // "class": "^Gnome\\-terminal$"
-       // "instance": "^gnome\\-terminal$",
-       // "title": "^lyall\\@lyall\\-linux\\:\\/home\\/lyall$",
-       // "transient_for": "^$",
-       // "window_role": "^gnome\\-terminal\\-window\\-3664\\-81746392\\-1470884485$"
-        "class": "^google\\-chrome$",
-        "instance": "^google\\-chrome$"
-       }
-    ],
-    "type": "con"
-}
 
 {
     // splitv split container with 2 children
@@ -34,8 +9,8 @@
     "type": "con",
     "nodes": [
         {
-            "border": "normal",
-            "current_border_width": 2,
+            //"border": "normal",
+            //"current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
                "height": 408,
@@ -43,7 +18,7 @@
                "x": 2,
                "y": 875
             },
-            "name": "Listen Now - Google Play Music",
+            "name": "Google Play Music",
             "percent": 0.5,
             "swallows": [
                {
@@ -57,8 +32,8 @@
             "type": "con"
         },
         {
-            "border": "normal",
-            "current_border_width": 2,
+            //"border": "normal",
+            //"current_border_width": 2,
             "floating": "auto_off",
             "geometry": {
                "height": 408,
@@ -81,4 +56,31 @@
         }
     ]
 }
+
+{
+    //"border": "normal",
+    //"current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 434,
+       "width": 722,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Chrome",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^Gnome\\-terminal$"
+       // "instance": "^gnome\\-terminal$",
+       // "title": "^lyall\\@lyall\\-linux\\:\\/home\\/lyall$",
+       // "transient_for": "^$",
+       // "window_role": "^gnome\\-terminal\\-window\\-3664\\-81746392\\-1470884485$"
+        "class": "^[Gg]oogle\\-chrome",
+        "instance": "^[Gg]oogle\\-chrome"
+       }
+    ],
+    "type": "con"
+}
+
 

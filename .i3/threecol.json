@@ -67,14 +67,14 @@
                "x": 406,
                "y": 1
             },
-            "name": "Chrome",
+            "name": "Chrome Beta",
             "percent": 1,
             "swallows": [
                {
                   "class": "^chromium\\-browser$"
                },
                {
-                  "class": "^[Gg]oogle\\-chrome"
+                  "class": "^[Gg]oogle\\-chrome\\-beta$"
                }
             ],
             "type": "con"
