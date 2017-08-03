@@ -9,6 +9,7 @@ ln -sb ~/dotfiles/.vimrc ~
 ln -sb ~/dotfiles/.gitconfig ~
 ln -sb ~/dotfiles/.gitignore_global ~
 ln -sb ~/dotfiles/.i3 ~
+ln -sb ~/dotfiles/.Xmodmap ~
 
 # Load own bashrc after local bashrc
 echo "source ~/dotfiles/.bashrc" >> .bashrc
