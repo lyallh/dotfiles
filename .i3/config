@@ -235,6 +235,7 @@ bindsym $mod+n mode "SHUTDOWN: (s)leep (h)ybernate (p)owersave (r)estart shut(d)
 # Display output mode
 set $mode_output DISPLAY OUTPUT (shift-#: off; alt-#: rot) : (1) DVI-0, (2) DVI-1, (3) HDMI-0, (4) DP-0
 mode "$mode_output" {
+	# Desktop (keys 1 - 4)
         bindsym 1 exec xrandr --output DVI-I-0 --auto --left-of DP-0 #--output DVI-I-1 --off --output HDMI-0 --off --output DP-0 --off 
         bindsym shift+1 exec xrandr --output DVI-I-0 --off
         bindsym $mod+1 exec xrandr --output DVI-I-0 --rotate left
@@ -249,6 +250,16 @@ mode "$mode_output" {
         bindsym $mod+4 exec xrandr --output DP-0 --rotate left
         bindsym Return mode "default"
         bindsym Escape mode "default"
+	# Zenbook (keys 7 - 0)
+	bindsym 7 exec xrandr --output eDP-1 --auto
+	bindsym shift+7 exec xrandr --output eDP-1-1 --off
+	bindsym 8 exec xrandr --output DP-1 --auto
+	bindsym shift+8 exec xrandr --output DP-1 --off
+	bindsym 9 exec xrandr --output HDMI-1 --auto
+	bindsym shift+9 exec xrandr --output HDMI-1 --off
+	bindsym 0 exec xrandr --output HDMI-2 --auto
+	bindsym shift+0 exec xrandr --output HDMI-2 --off
+
 }
 bindsym $mod+shift+o mode "$mode_output"
 
