@@ -43,10 +43,10 @@ bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -55,10 +55,10 @@ bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -115,8 +115,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Really exit Gnome i3? This will end your X session.' -b 'Yes, exit' 'gnome-session-quit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,18 +176,13 @@ client.background       #ffffff
 ### LWH ###
 
 # Multimedia Keys
-# NOW HANDLED BY GNOME SESSION
-    # http://zork.net/~st/jottings/gnome-i3.html
 # volume control (https://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/)
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # brightness control
-#bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
-#bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 10
-# keyboard brightness control (Todo)
-#bindsym XF86KbdBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
-#bindsym XF86KbdBrightnessUp exec xbacklight -steps 1 -time 0 -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -steps 1 -time 0 -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -steps 1 -time 0 -inc 10
 
 # border size on windows. 
 # Difference between using "pixel" and "normal" ?
@@ -257,8 +251,8 @@ mode "$mode_output" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
     # Zenbook (keys 7 - 0)
-        bindsym 7 exec xrandr --output eDP-1 --auto --below DP-1
-        bindsym shift+7 exec xrandr --output eDP-1 --off
+        bindsym 7 exec xrandr --output eDP-1 --auto
+        bindsym shift+7 exec xrandr --output eDP-1-1 --off
         bindsym 8 exec xrandr --output DP-1 --auto
         bindsym shift+8 exec xrandr --output DP-1 --off
         bindsym 9 exec xrandr --output HDMI-1 --auto
@@ -281,25 +275,12 @@ bindsym $mod+shift+x exec i3lock
 
 ## STARTUP STUFF
 
-# Monitor setup
-#exec xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --auto --output DP-0 --off
-# Monitor setup with screen tearing fix
-#exec nvidia-settings --assign CurrentMetaMode="DP-0:3840x2160_60 +1080+0 { ForceFullCompositionPipeline = On }, HDMI-0:1920x1080_60 +0+0 { Rotation=left }"
-
 # Launch gnome-settings-daemon to support loading of
 # themes specified in ~/.gtkrc-2.0 and ~/.config/gtk-3.0/settings.ini
 exec --no-startup-id gnome-settings-daemon
 
-# Gnome + i3: Notify gnome session manager that i3 has started correctly
-# http://zork.net/~st/jottings/gnome-i3.html
-exec --no-startup-id dbus-send \
-    --session \
-    --print-reply=literal \
-    --dest=org.gnome.SessionManager \
-    "/org/gnome/SessionManager" \
-    org.gnome.SessionManager.RegisterClient \
-    "string:i3" \
-    "string:$DESKTOP_AUTOSTART_ID"
-# Launch network manager applet for gnome-panel
-exec --no-startup-id nm-applet
+# Monitor setup
+#exec xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --auto --output DP-0 --off
+# Monitor setup with screen tearing fix
+#exec nvidia-settings --assign CurrentMetaMode="DP-0:3840x2160_60 +1080+0 { ForceFullCompositionPipeline = On }, HDMI-0:1920x1080_60 +0+0 { Rotation=left }"
 
