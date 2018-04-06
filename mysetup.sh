@@ -18,6 +18,11 @@ ln -sb ~/dotfiles/.gitignore_global ~
 ln -sb ~/dotfiles/.i3 ~
 ln -sb ~/dotfiles/.Xmodmap ~
 
+# Vscode config
+ln -s ~/dotfiles/.config/Code/User/settings.json ~/.config/Code/User
+ln -s ~/dotfiles/.config/Code/User/keybindings.json ~/.config/Code/User
+ln -s ~/dotfiles/.config/Code/User/snippets/ ~/.config/Code/User
+
 # Load bashrc custom after local bashrc
 echo "source ~/dotfiles/.bashrc_custom" >> .bashrc
 

@@ -1,0 +1,16 @@
+// Place your key bindings in this file to overwrite the defaults
+
+[
+	{
+		"key": "alt+m",
+		"command": "workbench.action.toggleMenuBar"
+	},
+	{
+		"key": "ctrl+shift+i",
+		"command": "workbench.action.toggleDevTools"
+	},
+	{
+		"key": "ctrl+shift+alt+d",
+		"command": "insertDateString.insertDate"
+	}
+]
