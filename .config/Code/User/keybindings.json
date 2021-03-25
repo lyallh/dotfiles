@@ -12,5 +12,17 @@
 	{
 		"key": "ctrl+shift+alt+d",
 		"command": "insertDateString.insertDate"
+	},
+	{
+		"key": "ctrl+shift+t",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+`",
+		"command": "-workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+alt+t",
+		"command": "workbench.action.reopenClosedEditor"
 	}
 ]
