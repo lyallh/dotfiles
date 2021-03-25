@@ -67,3 +67,4 @@ export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/st
 # Android for meteor mobile (http://guide.meteor.com/mobile.html#installing-prerequisites)
 export ANDROID_HOME="$HOME/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export TERMINAL=mate-terminal

@@ -24,7 +24,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec mate-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -34,7 +35,7 @@ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -116,7 +117,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Really exit Gnome i3? This will end your X session.' -b 'Yes, exit' 'gnome-session-quit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Really exit Gnome i3? This will end your X session.' -b 'Yes, exit' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -285,23 +286,23 @@ bindsym $mod+shift+x exec i3lock
 
 # Monitor setup
 #exec xrandr --output DVI-I-0 --off --output DVI-I-1 --off --output HDMI-0 --auto --output DP-0 --off
+# X1 + 4K display
+#exec xrandr --output eDP1 --auto --left-of DP2 --output DP1 --off --output DP2 --auto --output HDMI1 --off --output HDMI2 --off
 # Monitor setup with screen tearing fix
 #exec nvidia-settings --assign CurrentMetaMode="DP-0:3840x2160_60 +1080+0 { ForceFullCompositionPipeline = On }, HDMI-0:1920x1080_60 +0+0 { Rotation=left }"
 
 # Launch gnome-settings-daemon to support loading of
 # themes specified in ~/.gtkrc-2.0 and ~/.config/gtk-3.0/settings.ini
-exec --no-startup-id gnome-settings-daemon
+#exec --no-startup-id mate-settings-daemon
+#exec --no-startup-id mate-panel
 
-# Gnome + i3: Notify gnome session manager that i3 has started correctly
-# http://zork.net/~st/jottings/gnome-i3.html
-exec --no-startup-id dbus-send \
-    --session \
-    --print-reply=literal \
-    --dest=org.gnome.SessionManager \
-    "/org/gnome/SessionManager" \
-    org.gnome.SessionManager.RegisterClient \
-    "string:i3" \
-    "string:$DESKTOP_AUTOSTART_ID"
 # Launch network manager applet for gnome-panel
 exec --no-startup-id nm-applet
+
+# Launch MATE
+exec --no-startup-id mate-session
+exec --no-startup-id mate-settings-daemon
+exec --no-startup-id mate-power-manager
+exec --no-startup-id mate-panel
+
 
